@@ -31,7 +31,7 @@ alcohol.each do |id|
   url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{id}"
 list = open(url).read
 result = JSON.parse(list)
-  cocktail = Cocktail.new(name: result['drinks'][0]['strDrink'], image: result['drinks'][1]['strDrinkThumb'])
+  cocktail = Cocktail.new(name: result['drinks'][0]['strDrink'])
   cocktail.save!
 end
 
